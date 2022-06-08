@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             xmlns:tt="clr-namespace:TouchTracking.Forms;assembly=TouchTracking.Forms"
+             x:Class="PatientEvaluationApp_UTCN.Views.Drawing.DrawingView">
+    <Grid ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="White">
+            <forms:SKCanvasView x:Name="canvasView"
+                               PaintSurface="OnCanvasViewPaintSurface" />
+            <Grid.Effects>
+                <tt:TouchEffect Capture="True"
+                                TouchAction="OnTouchEffectAction" />
+            </Grid.Effects>
+        </Grid>
+        <Button Grid.Row="1" Grid.Column="0" Text="Save" Clicked="Button_OnClicked2"  TextColor="White" BackgroundColor="IndianRed" HorizontalOptions="Fill" CornerRadius="0"/>
+        <Button Grid.Row="1" Grid.Column="1" Text="Restart" Clicked="Button_OnClicked" TextColor="White" BackgroundColor="DeepSkyBlue"  HorizontalOptions="Fill" CornerRadius="0"/>
+     
+    </Grid>
+</ContentPage>

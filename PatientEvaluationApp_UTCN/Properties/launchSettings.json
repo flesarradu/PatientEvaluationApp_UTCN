@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PatientEvaluationApp_UTCN": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

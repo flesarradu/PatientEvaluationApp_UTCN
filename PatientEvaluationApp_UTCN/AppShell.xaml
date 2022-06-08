@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:drawing="clr-namespace:PatientEvaluationApp_UTCN.Views.Drawing;assembly=PatientEvaluationApp_UTCN"
+             xmlns:recording="clr-namespace:PatientEvaluationApp_UTCN.Views.Recording;assembly=PatientEvaluationApp_UTCN"
+             xmlns:views="clr-namespace:PatientEvaluationApp_UTCN.Views;assembly=PatientEvaluationApp_UTCN"
+             x:Class="PatientEvaluationApp_UTCN.AppShell">
+
+    <TabBar>
+        <ShellContent ContentTemplate="{DataTemplate views:LoginView}" Shell.FlyoutBehavior="Disabled" Route="LoginView"/>
+    </TabBar>
+
+    <FlyoutItem Title="RecordingPage">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate recording:RecordingView }" Route="RecordingView" Title="Recording" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Drawing">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate drawing:DrawingView }" Title="Drawing" Route="DrawingView" />
+        </Tab>
+    </FlyoutItem>
+    
+</Shell>

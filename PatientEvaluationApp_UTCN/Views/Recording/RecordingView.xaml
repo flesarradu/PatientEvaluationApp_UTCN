@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<lib:UtContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   xmlns:lib="clr-namespace:PatientEvaluationApp_UTCN.Lib;assembly=PatientEvaluationApp_UTCN"
+                   xmlns:recording="clr-namespace:PatientEvaluationApp_UTCN.ViewModels.Recording;assembly=PatientEvaluationApp_UTCN"
+                   xmlns:images="clr-namespace:PatientEvaluationApp_UTCN.Images;assembly=PatientEvaluationApp_UTCN"
+                   x:Class="PatientEvaluationApp_UTCN.Views.Recording.RecordingView"
+                   x:DataType="recording:IRecordingViewModel">
+
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="5.1*" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Text="$$Record voice" FontSize="Title" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+            <Label x:DataType="recording:RecordingViewModel" Grid.Row="1" FontSize="Medium" TextColor="Black"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding Path=DataModel.RecordingMinutes.Value}" />
+                        <Span Text="m " />
+                        <Span Text="{Binding Path=DataModel.RecordingSeconds.Value}" />
+                        <Span Text="s" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Grid.Row="2"  
+                   VerticalOptions = "Center" 
+                   HorizontalOptions = "Center" 
+                   FontSize="Medium"
+                   Text="{Binding Path=DataModel.RecordingMessage.Value}" 
+                   TextColor="Black"/>
+            <Button x:DataType="recording:RecordingViewModel"
+                    Grid.Row="3"
+                    x:Name="Button"  
+                    WidthRequest ="85"
+                    HeightRequest="85" 
+                    CornerRadius ="42" 
+                    VerticalOptions = "Center" 
+                    HorizontalOptions = "Center" 
+                    Background="Transparent"
+                    ImageSource="{Binding DataModel.ButtonImage.Value}"
+                    Command="{Binding Path=RecordTrigger}"
+                    />
+            <Grid Grid.Row="4" VerticalOptions="End">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="1" 
+                        Grid.ColumnSpan="2" 
+                        Text="$Save recording" 
+                        BackgroundColor="DeepSkyBlue" 
+                        VerticalOptions="End"
+                        Command="{Binding Path=RecordSave}"
+                        ImageSource="{x:Static images:ImageResourceExtension.RecordOnImage}"
+                        />
+            </Grid>
+                 
+
+
+        </Grid>
+    </StackLayout>
+
+</lib:UtContentPage>
