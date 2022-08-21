@@ -55,7 +55,7 @@
     <AndroidEnableMultiDex>false</AndroidEnableMultiDex>
     <AndroidUseAapt2>true</AndroidUseAapt2>
     <AndroidCreatePackagePerAbi>false</AndroidCreatePackagePerAbi>
-    <AndroidPackageFormat>aab</AndroidPackageFormat>
+    <AndroidPackageFormat>apk</AndroidPackageFormat>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />

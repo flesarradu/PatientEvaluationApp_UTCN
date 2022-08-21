@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PatientEvaluationApp_UTCN.Views.AccelerometerData.AccelerometerDataView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row ="0" TextColor="DeepSkyBlue" Grid.ColumnSpan="2" x:Name="labelState" HorizontalOptions="CenterAndExpand"/>
+                <Button Grid.Row ="1" Grid.Column="0" Text="Start" x:Name="startButton" Clicked="StartButton_OnClicked" HorizontalOptions="CenterAndExpand"/>
+                <Button Grid.Row ="1" Grid.Column="1" Text="Record" x:Name="recordButton" Clicked="RecordButton_OnClicked" HorizontalOptions="CenterAndExpand"/>
+
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

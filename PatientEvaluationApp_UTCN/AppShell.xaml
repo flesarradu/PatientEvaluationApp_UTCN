@@ -4,6 +4,7 @@
              xmlns:drawing="clr-namespace:PatientEvaluationApp_UTCN.Views.Drawing;assembly=PatientEvaluationApp_UTCN"
              xmlns:recording="clr-namespace:PatientEvaluationApp_UTCN.Views.Recording;assembly=PatientEvaluationApp_UTCN"
              xmlns:views="clr-namespace:PatientEvaluationApp_UTCN.Views;assembly=PatientEvaluationApp_UTCN"
+             xmlns:accelerometerData="clr-namespace:PatientEvaluationApp_UTCN.Views.AccelerometerData;assembly=PatientEvaluationApp_UTCN"
              x:Class="PatientEvaluationApp_UTCN.AppShell">
 
     <TabBar>
@@ -18,6 +19,12 @@
     <FlyoutItem Title="Drawing">
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate drawing:DrawingView }" Title="Drawing" Route="DrawingView" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Accelerometer">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate accelerometerData:AccelerometerDataView }" Title="Accelerometer" Route="AccelerometerDataView" />
         </Tab>
     </FlyoutItem>
     

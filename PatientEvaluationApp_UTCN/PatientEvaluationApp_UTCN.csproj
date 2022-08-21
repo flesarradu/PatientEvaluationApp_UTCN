@@ -45,6 +45,9 @@
     <EmbeddedResource Update="AppShell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\AccelerometerData\AccelerometerDataView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Drawing\DrawingView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -54,6 +57,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\AccelerometerData\AccelerometerDataView.xaml.cs">
+      <DependentUpon>AccelerometerDataView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Recording\RecordingView.xaml.cs">
       <DependentUpon>RecordingView.xaml</DependentUpon>
     </Compile>

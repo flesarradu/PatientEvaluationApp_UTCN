@@ -63,7 +63,6 @@ namespace PatientEvaluationApp_UTCN.ViewModels.Recording
                         this.DataModel.RecordingMinutes.Value++;
                         this.DataModel.RecordingSeconds.Value = 0;
                     }
-
                     return this.DataModel.IsRecording.Value;
                 });
                 if (!this.recorder.IsRecording) await this.recorder.StartRecording();
